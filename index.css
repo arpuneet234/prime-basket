@@ -1,0 +1,35 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  border: 1px solid black;
+  padding: 10px;
+  margin: 0px;
+}
+.nav-items > ul {
+  display: flex;
+}
+
+.nav-items > ul > li {
+  padding: 1px;
+  margin: 10px;
+  list-style: none;
+  font-size: 20px;
+}
+.logo {
+  width: 100px;
+}
+
+.prod-card {
+  border: 1px solid black;
+  width: 200px;
+  height: 300px;
+  padding: 5px;
+  margin: 5px;
+}
+.prod-container {
+  display: flex;
+  flex-wrap: wrap;
+}
+.prod-img {
+  width: 100%;
+}
