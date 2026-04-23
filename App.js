@@ -1,6 +1,6 @@
 import ReactDOM from "react-dom/client";
 import React from "react";
-import logo from "./assets/prime-basket-logo.jpeg";
+import prodData from "./prodData";
 
 const Header = () => {
   return (
@@ -23,15 +23,17 @@ const Header = () => {
   );
 };
 
-const ProductCard = () => {
+const prodDataList = prodData.products;
+
+const ProductCard = (props) => {
+  const data = props.prodData;
   return (
     <div className="prod-card">
-      <img
-        className="prod-img"
-        src="https://m.media-amazon.com/images/I/71JGCn1z1TL._AC_UY436_FMwebp_QL65_.jpg"
-        alt="test"
-      />
-      <h3>Iphone 17 Pro</h3>
+      <img className="prod-img" src={data.thumbnail} alt="test" />
+      <h2>{data.title}</h2>
+
+      <h4>Price:{data.price}$</h4>
+      <h4>Rating:{data.rating}</h4>
     </div>
   );
 };
@@ -43,26 +45,9 @@ const Body = () => {
         <h1>Search</h1>
       </div>
       <div className="prod-container">
-        <ProductCard />
-        <ProductCard />
-        <ProductCard />
-        <ProductCard />
-        <ProductCard />
-        <ProductCard />
-        <ProductCard />
-        <ProductCard />
-        <ProductCard />
-        <ProductCard />
-        <ProductCard />
-        <ProductCard />
-        <ProductCard />
-        <ProductCard />
-        <ProductCard />
-        <ProductCard />
-        <ProductCard />
-        <ProductCard />
-        <ProductCard />
-        <ProductCard />
+        {prodDataList.map((product) => (
+          <ProductCard key={product.id} prodData={product} />
+        ))}
       </div>
     </div>
   );
