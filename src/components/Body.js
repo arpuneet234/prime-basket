@@ -17,7 +17,7 @@ const Body = () => {
 
   async function fetchData(){
 
-    const data= await fetch("https://dummyjson.com/products?skip=40&limit=100");
+    const data= await fetch("https://dummyjson.com/products?skip=30&limit=300");
     const json=await data.json();
     console.log(json)
     setListOfProducts(json?.products)
