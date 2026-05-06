@@ -1,5 +1,22 @@
-const About = () => {
-  return (
+import UserClass from "./UserClass"
+import React from "react";
+
+
+class About extends React.Component{
+
+  constructor(){
+    super()
+    console.log("Parent constructor")
+  }
+
+  componentDidMount(){
+    console.log("Parent Component Did Mount")
+  }
+  render(){
+
+    console.log("Parent Render")
+
+    return (
     <div className="about-page">
       <div className="about-hero">
         <h1>About Prime Basket 🛒</h1>
@@ -43,8 +60,9 @@ const About = () => {
           </p>
         </div>
       </div>
+      <UserClass name={"Puneet (Class Based)"}/>
     </div>
   );
-};
-
+  }
+}
 export default About;
