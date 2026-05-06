@@ -21,16 +21,24 @@ class UserClass extends React.Component{
         })
         console.log(json);
     }
-    render(){
-        console.log("Child Render")
-        return(
-        <div className="user-card">
-            <h1>User Info</h1>
-            <h2>Name :{this.state.userInfo.name}</h2>
-            <h2>{this.state.userInfo.location}</h2>
-            
+    render() {
+    console.log("Child Render");
+    const { name, location, avatar_url, public_repos, followers, login, bio } =
+      this.state.userInfo;
+ 
+    return (
+      <div className="user-card">
+        <img src={avatar_url} alt={name} className="user-avatar" />
+        <h2>{name}</h2>
+        <p className="user-handle">@{login}</p>
+        <p>📍 {location}</p>
+        {bio && <p>{bio}</p>}
+        <div className="user-stats">
+          <span>Repos: <strong>{public_repos}</strong></span>
+          <span>Followers: <strong>{followers}</strong></span>
         </div>
-        )
-    }
+      </div>
+    );
+  }
 }
 export default UserClass

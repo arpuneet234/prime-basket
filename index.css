@@ -474,7 +474,30 @@
   margin: 10px 30px;
 }
 
-.user-card{
-  border: 1px solid black;
-  width: 1000px
+.user-card {
+  border: 1px solid #e0e0e0;
+  border-radius: 12px;
+  width: 320px;
+  padding: 20px;
+  text-align: center;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.user-avatar {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.user-handle {
+  color: gray;
+  font-size: 14px;
+}
+
+.user-stats {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 10px;
 }

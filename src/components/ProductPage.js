@@ -1,38 +1,24 @@
 import { useEffect, useState } from "react";
 import {useParams} from "react-router-dom"
-
 import ProductDetailShimmer from "./ProductDetailShimmer";
+import useProductPage from "../utils/useProductPage";
 
 
 const ProductPage = () => {
     const {id}=useParams();
-    console.log(id)
-    const[product,setProduct]=useState(null);
-  useEffect(()=>{
-    fetchProduct();
-  },[])
-
-  async function fetchProduct(){
-
-    const data = await fetch("https://dummyjson.com/products/"+id)
-
-    const json = await data.json();
-    
-    setProduct(json);
-  }
-
+    const product=useProductPage(id);   
   if (!product) return <ProductDetailShimmer/>
 
   return (
     <div className="product-page">
       <div className="product-container">
         
-        {/* Image Section */}
+        
         <div className="product-image">
           <img src={product.thumbnail} alt={product.title} />
         </div>
 
-        {/* Details Section */}
+        
         <div className="product-details">
           <h1>{product.title}</h1>
           <p className="brand">Brand: {product.brand}</p>
@@ -54,7 +40,7 @@ const ProductPage = () => {
         </div>
       </div>
 
-      {/* Reviews Section */}
+      
       <div className="reviews">
         <h2>Reviews</h2>
         {product.reviews.map((review, index) => (
