@@ -501,3 +501,43 @@
   gap: 20px;
   margin-top: 10px;
 }
+
+.primepay {
+  max-width: 360px;
+  margin: 60px auto;
+  text-align: center;
+  font-family: sans-serif;
+}
+
+.primepay h1 {
+  margin-bottom: 6px;
+}
+
+.primepay p {
+  color: gray;
+  margin-bottom: 24px;
+}
+
+.primepay-form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.primepay-form input {
+  padding: 12px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 15px;
+  outline: none;
+}
+
+.primepay-form button {
+  padding: 12px;
+  background: #1a1a2e;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+}

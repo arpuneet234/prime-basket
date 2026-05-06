@@ -8,6 +8,10 @@ import Contact from "./components/Contact";
 import { Outlet } from "react-router-dom";
 import Error from "./components/Error";
 import ProductPage from "./components/ProductPage";
+import { lazy ,Suspense } from "react";
+// import PrimePay from "./components/PrimePay";
+
+const PrimePay=lazy(()=>import("./components/PrimePay"))
 const AppLayout = () => {
   return (
     <div>
@@ -28,6 +32,11 @@ const appRouter=createBrowserRouter([
   },
 
   {
+    path:"/primepay",
+    element:<Suspense fallback={<h1>Loading....</h1>}><PrimePay/></Suspense>
+  },
+
+  {
     path:"/about",
     element:<About/>
   },
@@ -45,7 +54,5 @@ const appRouter=createBrowserRouter([
   },
   
 ])
-
-
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(<RouterProvider router={appRouter}/>);
