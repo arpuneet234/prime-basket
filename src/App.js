@@ -9,6 +9,8 @@ import { Outlet } from "react-router-dom";
 import Error from "./components/Error";
 import ProductPage from "./components/ProductPage";
 import { lazy ,Suspense } from "react";
+import "../index.css"
+
 // import PrimePay from "./components/PrimePay";
 
 const PrimePay=lazy(()=>import("./components/PrimePay"))

@@ -4,26 +4,26 @@ import { Link } from "react-router-dom";
 const Header = () => {
   const [loginButtonValue,setLoginButtonValue]=useState("Login")
   return (
-    <div className="header">
+    <div className=" Header flex justify-between items-center px-6 py-2 bg-white  shadow-md sticky top-0 z-50">
       <div className="logo-container">
         <Link to="/">
         <img
-          className="logo"
+          className="w-16"
           src="https://prime-basket.developmentalphawizz.com/resources/themes/alpha_ecom/public/assets/images/primeLogo.png"
         />
         </Link>
       </div>
-      <div className="nav-items">
-        <ul>
-          <Link to="/"><li>Home</li></Link>
-          <Link to="/about"><li>About</li></Link>
-          <Link to="/contact"><li>Contact</li></Link>
-          <Link to="/primepay"><li>PrimePay</li></Link>
+      <div className="">
+        <ul className="flex gap-8 m-0 p-0 list-none">
+          <Link to="/"><li className=" text-lg text-gray-700 hover:text-red-500 cursor-pointer font-medium transition-colors duration-200">Home</li></Link>
+          <Link to="/about"><li className=" text-lg text-gray-700 hover:text-red-500 cursor-pointer font-medium transition-colors duration-200">About</li></Link>
+          <Link to="/contact"><li className= " text-lg text-gray-700 hover:text-red-500 cursor-pointer font-medium transition-colors duration-200">Contact</li></Link>
+          <Link to="/primepay"><li className="text-lg text-gray-700 hover:text-red-500 cursor-pointer font-medium transition-colors duration-200">PrimePay</li></Link>
         </ul>
         
       </div>
       <div>
-        <button className="login-btn" onClick={()=>{loginButtonValue==="Login"?setLoginButtonValue("Logout"):setLoginButtonValue("Login")}}>{loginButtonValue}</button>
+        <button className="login-btn border-2 border-red-500 text-red-500 px-5 py-2 rounded-full font-semibold hover:bg-red-500 hover:text-white transition-all duration-200 " onClick={()=>{loginButtonValue==="Login"?setLoginButtonValue("Logout"):setLoginButtonValue("Login")}}>{loginButtonValue}</button>
       </div>
       
     </div>
