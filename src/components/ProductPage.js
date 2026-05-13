@@ -5,8 +5,9 @@ import useProductPage from "../utils/useProductPage";
 
 
 const ProductPage = () => {
-    const {id}=useParams();
-    const product=useProductPage(id);   
+  const [showReviews, setShowReviews] = useState(null);
+  const {id} = useParams();
+  const product = useProductPage(id);   
   if (!product) return <ProductDetailShimmer/>
 
   return (
@@ -40,14 +41,37 @@ const ProductPage = () => {
       </div>
 
       {/* Reviews */}
-      <div className="mt-10">
-        <h2 className="text-xl font-bold text-gray-800 mb-4">Customer Reviews</h2>
+      <div className="mt-10 max-w-3xl mx-auto">
+        <h2 className="text-2xl font-bold text-gray-800 mb-6">Customer Reviews 💬</h2>
         <div className="flex flex-col gap-4">
           {product.reviews.map((review, index) => (
-            <div key={index} className="bg-white rounded-xl shadow-sm p-6 border border-gray-100">
-              <p className="font-semibold text-gray-800">{review.reviewerName}</p>
-              <p className="text-yellow-400 text-sm">⭐ {review.rating}</p>
-              <p className="text-gray-600 text-sm mt-1">{review.comment}</p>
+            <div key={index} className={`bg-white rounded-2xl shadow-sm border transition-all duration-300 overflow-hidden ${showReviews === index ? "border-red-200" : "border-gray-100"}`}>
+              
+              {/* Review Header */}
+              <div 
+                className={`flex justify-between items-center p-5 cursor-pointer hover:bg-gray-50 transition-colors duration-200 ${showReviews === index ? "bg-red-50" : ""}`}
+                onClick={() => setShowReviews(showReviews === index ? null : index)}
+              >
+                <div className="flex items-center gap-3">
+                  {/* Avatar */}
+                  <div className="w-10 h-10 rounded-full bg-red-100 flex items-center justify-center text-red-500 font-bold text-sm">
+                    {review.reviewerName.charAt(0)}
+                  </div>
+                  <div>
+                    <p className="font-semibold text-gray-800">{review.reviewerName}</p>
+                    <p className="text-yellow-400 text-xs">{"★".repeat(review.rating)}{"☆".repeat(5 - review.rating)}</p>
+                  </div>
+                </div>
+                <span className={`text-gray-400 text-lg transition-transform duration-300 ${showReviews === index ? "rotate-180" : ""}`}>↓</span>
+              </div>
+
+              {/* Review Content */}
+              {showReviews === index && (
+                <div className="px-5 pb-5 pt-2 border-t border-gray-100">
+                  <p className="text-gray-600 text-sm leading-relaxed">{review.comment}</p>
+                </div>
+              )}
+
             </div>
           ))}
         </div>
