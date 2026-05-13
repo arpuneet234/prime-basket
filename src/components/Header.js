@@ -1,7 +1,11 @@
-import { useState } from "react";
+import { useState,useContext } from "react";
 import { Link } from "react-router-dom";
+import UserContext from "../utils/UserContext";
+
 
 const Header = () => {
+  const data=useContext(UserContext);
+  console.log(data)
   const [loginButtonValue,setLoginButtonValue]=useState("Login")
   return (
     <div className=" Header flex justify-between items-center px-6 py-2 bg-white  shadow-md sticky top-0 z-50">
@@ -24,6 +28,7 @@ const Header = () => {
       </div>
       <div>
         <button className="login-btn border-2 border-red-500 text-red-500 px-5 py-2 rounded-full font-semibold hover:bg-red-500 hover:text-white transition-all duration-200 " onClick={()=>{loginButtonValue==="Login"?setLoginButtonValue("Logout"):setLoginButtonValue("Login")}}>{loginButtonValue}</button>
+        <div>{data.loggedInUser}</div>
       </div>
       
     </div>

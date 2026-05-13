@@ -10,16 +10,19 @@ import Error from "./components/Error";
 import ProductPage from "./components/ProductPage";
 import { lazy ,Suspense } from "react";
 import "../index.css"
+import UserContext from "./utils/UserContext";
 
 // import PrimePay from "./components/PrimePay";
 
 const PrimePay=lazy(()=>import("./components/PrimePay"))
 const AppLayout = () => {
   return (
+    <UserContext.Provider value={{loggedInUser:"Puneet"}}>
     <div>
       <Header />  
       <Outlet/>
     </div>
+    </UserContext.Provider>
   );
 };
 const appRouter=createBrowserRouter([
