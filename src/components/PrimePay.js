@@ -12,7 +12,7 @@ const PrimePay = () => {
       <div className="bg-white rounded-2xl shadow-md p-8 w-full max-w-md border border-gray-100">
         
         {/* Card Preview */}
-        <div className="bg-gradient-to-r from-red-500 to-red-400 rounded-2xl p-6 mb-8 text-white shadow-lg">
+        <div className="bg-linear-to-r from-red-500 to-red-400 rounded-2xl p-6 mb-8 text-white shadow-lg">
           <p className="text-xs opacity-75 mb-6">Prime Basket Card</p>
           <p className="text-lg tracking-widest font-mono mb-4">**** **** **** ****</p>
           <div className="flex justify-between items-center">

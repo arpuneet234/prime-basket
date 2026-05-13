@@ -15,7 +15,7 @@ const ProductPage = () => {
       <div className="flex gap-10 bg-white rounded-2xl shadow-md p-8">
         
         {/* Product Image */}
-        <div className="w-96 h-96 bg-gray-100 rounded-xl overflow-hidden flex-shrink-0">
+        <div className="w-96 h-96 bg-gray-100 rounded-xl overflow-hidden shrink-0">
           <img className="w-full h-full object-contain p-4" src={product.thumbnail} alt={product.title} />
         </div>
 
