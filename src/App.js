@@ -11,18 +11,23 @@ import ProductPage from "./components/ProductPage";
 import { lazy ,Suspense } from "react";
 import "../index.css"
 import UserContext from "./utils/UserContext";
+import { Provider } from "react-redux";
+import appStore from "./utils/appStore";
+import CartPage from "./components/CartPage";
 
 // import PrimePay from "./components/PrimePay";
 
 const PrimePay=lazy(()=>import("./components/PrimePay"))
 const AppLayout = () => {
   return (
+    <Provider store={appStore}>
     <UserContext.Provider value={{loggedInUser:"Puneet"}}>
     <div>
       <Header />  
       <Outlet/>
     </div>
     </UserContext.Provider>
+    </Provider>
   );
 };
 const appRouter=createBrowserRouter([
@@ -48,6 +53,10 @@ const appRouter=createBrowserRouter([
   {
     path:"/contact",
     element:<Contact/>
+  },
+  {
+    path:"/cart",
+    element:<CartPage/>
   },
 
   {

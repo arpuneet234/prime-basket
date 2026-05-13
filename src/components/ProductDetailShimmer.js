@@ -6,7 +6,7 @@ const ProductDetailShimmer = () => {
       <div className="flex gap-10 bg-white rounded-2xl shadow-md p-8">
         
         {/* Image shimmer */}
-        <div className="w-96 h-96 bg-gray-200 rounded-xl flex-shrink-0"></div>
+        <div className="w-96 h-96 bg-gray-200 rounded-xl shrink-0"></div>
 
         {/* Details shimmer */}
         <div className="flex flex-col gap-4 flex-1">

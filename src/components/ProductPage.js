@@ -2,14 +2,21 @@ import { useEffect, useState } from "react";
 import {useParams} from "react-router-dom"
 import ProductDetailShimmer from "./ProductDetailShimmer";
 import useProductPage from "../utils/useProductPage";
+import { useDispatch } from "react-redux";
+import { addItem } from "../utils/cartSlice";
 
 
 const ProductPage = () => {
+  const dispatch = useDispatch();
   const [showReviews, setShowReviews] = useState(null);
   const {id} = useParams();
   const product = useProductPage(id);   
   if (!product) return <ProductDetailShimmer/>
 
+  const handleAddItems=(product)=>{
+
+    dispatch(addItem(product))
+  }
   return (
     <div className="p-8 bg-gray-50 min-h-screen">
       <div className="flex gap-10 bg-white rounded-2xl shadow-md p-8">
@@ -34,7 +41,7 @@ const ProductPage = () => {
           <p className="text-yellow-500 font-medium">⭐ {product.rating}</p>
           <p className="text-gray-500 text-sm">Stock: <span className="font-medium text-gray-700">{product.stock} items left</span></p>
 
-          <button className="mt-4 bg-red-500 text-white px-8 py-3 rounded-full font-semibold hover:bg-red-600 transition-colors duration-200 w-fit">
+          <button className="mt-4 bg-red-500 text-white px-8 py-3 rounded-full font-semibold hover:bg-red-600 transition-colors duration-200 w-fit" onClick={()=>handleAddItems(product)}>
             Buy Now
           </button>
         </div>

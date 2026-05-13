@@ -1,9 +1,12 @@
 import { useState,useContext } from "react";
 import { Link } from "react-router-dom";
 import UserContext from "../utils/UserContext";
+import { useSelector } from "react-redux";
 
 
 const Header = () => {
+  const cartItems=useSelector((store)=>store.cart.items)
+  console.log(cartItems);
   const data=useContext(UserContext);
   console.log(data)
   const [loginButtonValue,setLoginButtonValue]=useState("Login")
@@ -23,6 +26,7 @@ const Header = () => {
           <Link to="/about"><li className=" text-lg text-gray-700 hover:text-red-500 cursor-pointer font-medium transition-colors duration-200">About</li></Link>
           <Link to="/contact"><li className= " text-lg text-gray-700 hover:text-red-500 cursor-pointer font-medium transition-colors duration-200">Contact</li></Link>
           <Link to="/primepay"><li className="text-lg text-gray-700 hover:text-red-500 cursor-pointer font-medium transition-colors duration-200">PrimePay</li></Link>
+           <Link to="/cart"><li className="text-lg text-gray-700 hover:text-red-500 cursor-pointer font-medium transition-colors duration-200">Cart ( {cartItems.length} Items) </li></Link>
         </ul>
         
       </div>
