@@ -4,3 +4,4 @@ dist
 .parcel-cache
 .env
 .env.local
+.vercel

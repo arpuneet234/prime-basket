@@ -4,7 +4,7 @@ Modern grocery e-commerce demo built with React, Redux Toolkit, React Router, an
 
 ## Live demo
 
-**[Add your deployed URL here after deploy](https://your-app.vercel.app)**
+**https://prime-basket-eta.vercel.app**
 
 ## Features
 
