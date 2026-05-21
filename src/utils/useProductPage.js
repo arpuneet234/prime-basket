@@ -6,11 +6,9 @@ const useProductPage = (id)=>{
 
     const[product,setProduct]=useState(null);
 
-    useEffect(()=>{
-
+    useEffect(() => {
         fetchProduct();
-
-    },[])
+    }, [id]);
 
     async function  fetchProduct(){
 

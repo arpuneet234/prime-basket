@@ -1,61 +1,61 @@
 const PrimePay = () => {
   return (
-    <div className="min-h-screen bg-gray-50 flex flex-col items-center justify-center p-4 sm:p-8">
-      
-      {/* Header */}
-      <div className="text-center mb-6 sm:mb-8 px-4">
-        <h1 className="text-2xl sm:text-4xl font-bold text-gray-800 mb-2">💳 PrimePay</h1>
-        <p className="text-gray-500">Secure payments for Prime Basket</p>
-      </div>
+    <div className="pb-page py-10 sm:py-14">
+      <div className="pb-container flex flex-col items-center">
+        <div className="text-center mb-8 max-w-md">
+          <h1 className="pb-section-title">PrimePay</h1>
+          <p className="pb-section-subtitle mt-2">Secure checkout powered by Prime Basket</p>
+        </div>
 
-      {/* Card */}
-      <div className="bg-white rounded-2xl shadow-md p-5 sm:p-8 w-full max-w-md border border-gray-100 mx-4">
-        
-        {/* Card Preview */}
-        <div className="bg-linear-to-r from-red-500 to-red-400 rounded-2xl p-6 mb-8 text-white shadow-lg">
-          <p className="text-xs opacity-75 mb-6">Prime Basket Card</p>
-          <p className="text-lg tracking-widest font-mono mb-4">**** **** **** ****</p>
-          <div className="flex justify-between items-center">
-            <div>
-              <p className="text-xs opacity-75">Expiry</p>
-              <p className="font-medium">MM/YY</p>
+        <div className="pb-card p-6 sm:p-8 w-full max-w-md shadow-lg shadow-slate-200/50 dark:shadow-black/30">
+          <div className="bg-gradient-to-br from-brand-600 to-brand-700 rounded-2xl p-6 mb-8 text-white shadow-lg shadow-brand-600/30">
+            <p className="text-xs text-white/70 uppercase tracking-wider mb-6">Prime Basket Card</p>
+            <p className="text-lg tracking-[0.2em] font-mono mb-6">•••• •••• •••• ••••</p>
+            <div className="flex justify-between items-end">
+              <div>
+                <p className="text-xs text-white/70">Valid thru</p>
+                <p className="font-medium">MM/YY</p>
+              </div>
+              <div className="text-2xl font-bold opacity-90">VISA</div>
             </div>
-            <div className="text-3xl">💳</div>
           </div>
+
+          <form className="flex flex-col gap-4" onSubmit={(e) => e.preventDefault()}>
+            <div>
+              <label className="text-sm font-medium text-slate-700 dark:text-slate-300 mb-1.5 block">Card number</label>
+              <input type="text" placeholder="1234 5678 9012 3456" className="pb-input" />
+            </div>
+            <div className="grid grid-cols-2 gap-4">
+              <div>
+                <label className="text-sm font-medium text-slate-700 dark:text-slate-300 mb-1.5 block">Expiry</label>
+                <input type="text" placeholder="MM/YY" className="pb-input" />
+              </div>
+              <div>
+                <label className="text-sm font-medium text-slate-700 dark:text-slate-300 mb-1.5 block">CVV</label>
+                <input type="text" placeholder="123" className="pb-input" />
+              </div>
+            </div>
+            <div>
+              <label className="text-sm font-medium text-slate-700 dark:text-slate-300 mb-1.5 block">Amount (₹)</label>
+              <input type="number" placeholder="0.00" className="pb-input" />
+            </div>
+            <button type="submit" className="pb-btn-primary w-full mt-2 py-3">
+              Pay securely
+            </button>
+          </form>
+
+          <p className="text-center text-slate-400 text-xs mt-5 flex items-center justify-center gap-1">
+            <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"
+              />
+            </svg>
+            Secured by PrimePay
+          </p>
         </div>
-
-        {/* Form */}
-        <div className="flex flex-col gap-4">
-          <input
-            type="text"
-            placeholder="Card Number"
-            className="border-2 border-gray-200 rounded-xl p-3 outline-none focus:border-red-400 transition-colors duration-200 text-gray-700"
-          />
-          <div className="flex gap-4">
-            <input
-              type="text"
-              placeholder="MM/YY"
-              className="border-2 border-gray-200 rounded-xl p-3 outline-none focus:border-red-400 transition-colors duration-200 text-gray-700 w-1/2"
-            />
-            <input
-              type="text"
-              placeholder="CVV"
-              className="border-2 border-gray-200 rounded-xl p-3 outline-none focus:border-red-400 transition-colors duration-200 text-gray-700 w-1/2"
-            />
-          </div>
-          <input
-            type="number"
-            placeholder="Amount (₹)"
-            className="border-2 border-gray-200 rounded-xl p-3 outline-none focus:border-red-400 transition-colors duration-200 text-gray-700"
-          />
-          <button className="bg-red-500 text-white py-3 rounded-xl font-semibold hover:bg-red-600 transition-colors duration-200 mt-2">
-            Pay Now
-          </button>
-        </div>
-
-        {/* Security note */}
-        <p className="text-center text-gray-400 text-xs mt-4">🔒 Secured by PrimePay</p>
-
       </div>
     </div>
   );

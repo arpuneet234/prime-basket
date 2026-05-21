@@ -2,17 +2,14 @@ import { Link } from "react-router-dom";
 
 const Error = () => {
   return (
-    <div className="min-h-screen bg-gray-50 flex flex-col items-center justify-center px-4 text-center gap-4">
-      <h1 className="text-6xl sm:text-8xl font-bold text-red-500">404</h1>
-      <h2 className="text-xl sm:text-2xl font-bold text-gray-800">Oops! Page Not Found 😢</h2>
-      <p className="text-gray-500 text-sm sm:text-base max-w-md">
-        The page you are looking for does not exist.
+    <div className="pb-page flex flex-col items-center justify-center px-4 py-16 text-center">
+      <p className="text-8xl sm:text-9xl font-bold text-brand-600/20 dark:text-brand-500/10 leading-none select-none">404</p>
+      <h1 className="pb-section-title -mt-4 sm:-mt-6">Page not found</h1>
+      <p className="pb-section-subtitle max-w-md mt-3 mb-8">
+        The page you are looking for does not exist or may have been moved.
       </p>
-      <Link
-        to="/"
-        className="mt-2 bg-red-500 text-white px-6 py-3 rounded-full font-semibold hover:bg-red-600 transition-colors duration-200"
-      >
-        Go Back Home
+      <Link to="/" className="pb-btn-primary">
+        Back to home
       </Link>
     </div>
   );

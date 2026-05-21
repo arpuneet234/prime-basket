@@ -1,24 +1,22 @@
 const ProductDetailShimmer = () => {
   return (
-    <div className="p-4 sm:p-8 bg-gray-50 min-h-screen animate-pulse">
-      <div className="flex flex-col lg:flex-row gap-6 lg:gap-10 bg-white rounded-2xl shadow-md p-4 sm:p-8 max-w-6xl mx-auto">
-        <div className="w-full lg:w-96 aspect-square max-h-80 sm:max-h-96 bg-gray-200 rounded-xl shrink-0"></div>
-        <div className="flex flex-col gap-4 flex-1">
-          <div className="h-8 bg-gray-200 rounded w-3/4"></div>
-          <div className="h-4 bg-gray-200 rounded w-1/2"></div>
-          <div className="h-4 bg-gray-200 rounded w-1/3"></div>
-          <div className="h-4 bg-gray-200 rounded w-full"></div>
-          <div className="h-4 bg-gray-200 rounded w-5/6"></div>
-          <div className="h-8 bg-gray-200 rounded w-1/4 mt-2"></div>
-          <div className="h-12 bg-gray-200 rounded-full w-full sm:w-36 mt-2"></div>
+    <div className="pb-page py-6 sm:py-8 animate-pulse">
+      <div className="pb-container">
+        <div className="h-4 bg-slate-200 dark:bg-slate-700 rounded w-48 mb-6" />
+        <div className="pb-card overflow-hidden">
+          <div className="flex flex-col lg:flex-row">
+            <div className="w-full lg:w-[420px] aspect-square bg-slate-200 dark:bg-slate-800" />
+            <div className="flex flex-col gap-4 p-6 sm:p-8 lg:p-10 flex-1">
+              <div className="h-6 bg-slate-200 dark:bg-slate-700 rounded w-24" />
+              <div className="h-8 bg-slate-200 dark:bg-slate-700 rounded w-3/4" />
+              <div className="h-4 bg-slate-200 dark:bg-slate-700 rounded w-1/3" />
+              <div className="h-4 bg-slate-200 dark:bg-slate-700 rounded w-full" />
+              <div className="h-4 bg-slate-200 dark:bg-slate-700 rounded w-5/6" />
+              <div className="h-10 bg-slate-200 dark:bg-slate-700 rounded w-32 mt-4" />
+              <div className="h-12 bg-slate-200 dark:bg-slate-700 rounded-xl w-full sm:w-48 mt-4" />
+            </div>
+          </div>
         </div>
-      </div>
-
-      <div className="mt-8 sm:mt-10 max-w-3xl mx-auto flex flex-col gap-4">
-        <div className="h-8 bg-gray-200 rounded w-48"></div>
-        <div className="h-16 bg-gray-200 rounded-2xl w-full"></div>
-        <div className="h-16 bg-gray-200 rounded-2xl w-full"></div>
-        <div className="h-16 bg-gray-200 rounded-2xl w-full"></div>
       </div>
     </div>
   );
