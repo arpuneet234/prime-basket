@@ -22,9 +22,9 @@ const AppLayout = () => {
   return (
     <Provider store={appStore}>
     <UserContext.Provider value={{loggedInUser:"Puneet"}}>
-    <div>
-      <Header />  
-      <Outlet/>
+    <div className="min-h-screen w-full max-w-[100vw] overflow-x-hidden">
+      <Header />
+      <Outlet />
     </div>
     </UserContext.Provider>
     </Provider>

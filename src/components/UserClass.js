@@ -25,7 +25,7 @@ class UserClass extends React.Component {
       this.state.userInfo;
 
     return (
-      <div className="bg-white rounded-2xl shadow-md p-6 w-72 flex flex-col items-center gap-3 border border-gray-100">
+      <div className="bg-white rounded-2xl shadow-md p-6 w-full max-w-sm flex flex-col items-center gap-3 border border-gray-100">
         
         {/* Avatar */}
         <img

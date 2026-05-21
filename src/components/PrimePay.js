@@ -1,15 +1,15 @@
 const PrimePay = () => {
   return (
-    <div className="min-h-screen bg-gray-50 flex flex-col items-center justify-center p-8">
+    <div className="min-h-screen bg-gray-50 flex flex-col items-center justify-center p-4 sm:p-8">
       
       {/* Header */}
-      <div className="text-center mb-8">
-        <h1 className="text-4xl font-bold text-gray-800 mb-2">💳 PrimePay</h1>
+      <div className="text-center mb-6 sm:mb-8 px-4">
+        <h1 className="text-2xl sm:text-4xl font-bold text-gray-800 mb-2">💳 PrimePay</h1>
         <p className="text-gray-500">Secure payments for Prime Basket</p>
       </div>
 
       {/* Card */}
-      <div className="bg-white rounded-2xl shadow-md p-8 w-full max-w-md border border-gray-100">
+      <div className="bg-white rounded-2xl shadow-md p-5 sm:p-8 w-full max-w-md border border-gray-100 mx-4">
         
         {/* Card Preview */}
         <div className="bg-linear-to-r from-red-500 to-red-400 rounded-2xl p-6 mb-8 text-white shadow-lg">

@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" role="img" aria-label="Prime Basket">
+  <rect width="32" height="32" rx="7" fill="#dc2626"/>
+  <path
+    fill="#fff"
+    d="M10 12h12l-1.2 9H11.2L10 12zm2.1-3h7.8c.6 0 1.1.5 1.2 1.1l.3 1.9H10.6l.5-2.4c.1-.9.9-1.6 1.9-1.6z"
+  />
+  <circle cx="13" cy="24" r="1.4" fill="#fff"/>
+  <circle cx="19" cy="24" r="1.4" fill="#fff"/>
+</svg>
